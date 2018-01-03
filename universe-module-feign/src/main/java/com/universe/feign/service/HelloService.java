@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author wangbing
  * @version 1.0, 2018/1/3
  */
-@FeignClient(value = "EUREKA-CLIENT-SERVICE")
+@FeignClient(value = "EUREKA-CLIENT-SERVICE", fallback = HelloServiceError.class)
 public interface HelloService {
 
     @RequestMapping(value = "/hello/hi", method = RequestMethod.GET)
